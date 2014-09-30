@@ -32,18 +32,18 @@ var App = Backbone.Model.extend({
       type: 'GET',
       context: this,
       contentType: 'application/json',
-      data: {
-        'where': JSON.stringify({
-          'updatedAt': {
-            '$gt': {
-              '__type': 'Date',
-              'iso': this.get('mostRecent')
-            }
-          }
-        }),
-        'order': '-updatedAt',
-        'limit': 100
-      },
+      // data: {
+      //   'where': JSON.stringify({
+      //     'updatedAt': {
+      //       '$gt': {
+      //         '__type': 'Date',
+      //         'iso': this.get('mostRecent')
+      //       }
+      //     }
+      //   }),
+      //   'order': '-updatedAt',
+      //   'limit': 100
+      // },
 
       success: function (data) {
         if (data.results.length > this.get('lastLength')) {
