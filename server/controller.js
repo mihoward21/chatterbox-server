@@ -1,8 +1,5 @@
-
-
 module.exports.get = function(req, res, headers){
   res.writeHead(200, headers);
-
 }
 module.exports.post = function(req, res, headers, results, textfile){
   res.writeHead(201, headers);
@@ -10,7 +7,6 @@ module.exports.post = function(req, res, headers, results, textfile){
         results.push(JSON.parse(chunk.toString()));
         textfile.appendFile("./test.txt", chunk.toString());
   });
-
 }
 module.exports.option = function(req, res, headers){
   var statusCode = 200;
